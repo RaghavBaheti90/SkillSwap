@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skill_swap/elements/home_sceen_tab.dart';
+import 'package:skill_swap/elements/top_skills_box.dart';
 
 class home_page extends StatefulWidget {
   const home_page({super.key});
@@ -16,48 +17,88 @@ class _home_pageState extends State<home_page> {
     return Scaffold(
       backgroundColor: Color(0xFFF4F3F7),
       body: SafeArea(
-          child: Column(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: hight * 0.02, vertical: hight * 0.002),
-                child: Text(
-                  "Welcome",
-                  style: TextStyle(
-                      fontSize: hight * 0.03, fontWeight: FontWeight.w400),
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: hight * 0.02,
+                              vertical: hight * 0.002),
+                          child: Text(
+                            "Welcome",
+                            style: TextStyle(
+                                fontSize: hight * 0.03,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: hight * 0.02,
+                              vertical: hight * 0.002),
+                          child: Text(
+                            "Harry!👋",
+                            style: TextStyle(
+                                fontSize: hight * 0.04,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                        padding: EdgeInsets.all(hight * 0.03),
+                        child: Container(
+                            width: width * 0.15,
+                            child: Image.asset("assets/chat.png")))
+                  ],
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: hight * 0.02, vertical: hight * 0.002),
-                child: Text(
-                  "Harry!👋",
-                  style: TextStyle(
-                      fontSize: hight * 0.04, fontWeight: FontWeight.bold),
+                SizedBox(
+                  height: hight * 0.03,
                 ),
-              ),
-              SizedBox(
-                height: hight * 0.03,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.05),
-                child: home_screen_tab(),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: width * 0.05, vertical: hight * 0.04),
-                child: home_screen_tab(),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.05),
-                child: home_screen_tab(),
-              ),
-            ],
-          ),
-        ],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+                  child: home_screen_tab(),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width * 0.05, vertical: hight * 0.04),
+                  child: home_screen_tab(),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: hight * 0.02, vertical: hight * 0.02),
+                  child: Text(
+                    "Top Profile",
+                    style: TextStyle(
+                        fontSize: hight * 0.03, fontWeight: FontWeight.w600),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: hight * 0.02),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                          10,
+                          (index) => Padding(
+                                padding: EdgeInsets.all(hight * 0.015),
+                                child: top_skills_box(),
+                              )),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       )),
     );
   }
