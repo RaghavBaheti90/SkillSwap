@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_swap/elements/book_now_popup.dart';
 
 class home_screen_tab extends StatefulWidget {
   const home_screen_tab({super.key});
@@ -75,19 +76,29 @@ class _home_screen_tabState extends State<home_screen_tab> {
                         SizedBox(
                           height: hight * 0.02,
                         ),
-                        Container(
-                          height: hight * 0.05,
-                          width: width * 0.3,
-                          decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 241, 161, 42),
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Center(
-                              child: Text(
-                            "Book Now",
-                            style: TextStyle(
-                                fontSize: hight * 0.02,
-                                fontWeight: FontWeight.w400),
-                          )),
+                        GestureDetector(
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return booknow_popup();
+                              },
+                            );
+                          },
+                          child: Container(
+                            height: hight * 0.05,
+                            width: width * 0.3,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 241, 161, 42),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Center(
+                                child: Text(
+                              "Book Now",
+                              style: TextStyle(
+                                  fontSize: hight * 0.02,
+                                  fontWeight: FontWeight.w400),
+                            )),
+                          ),
                         )
                       ],
                     )

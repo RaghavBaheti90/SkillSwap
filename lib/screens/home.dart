@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:skill_swap/elements/bottom_taskbar.dart';
 import 'package:skill_swap/elements/home_sceen_tab.dart';
 import 'package:skill_swap/elements/top_skills_box.dart';
+import 'package:skill_swap/screens/chat_page.dart';
+import 'package:skill_swap/screens/login_page.dart';
 
 class home_page extends StatefulWidget {
   const home_page({super.key});
@@ -16,6 +19,7 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF4F3F7),
+      bottomNavigationBar: bottom_taskbar(),
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
@@ -23,42 +27,61 @@ class _home_pageState extends State<home_page> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                AppBar(
+                  backgroundColor: Color(0xFFF4F3F7),
+                  elevation: 0,
+                  toolbarHeight: hight * 0.15,
+                  automaticallyImplyLeading: false,
+                  flexibleSpace: Padding(
+                    padding: EdgeInsets.only(top: hight * 0.02),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: hight * 0.02,
-                              vertical: hight * 0.002),
-                          child: Text(
-                            "Welcome",
-                            style: TextStyle(
-                                fontSize: hight * 0.03,
-                                fontWeight: FontWeight.w400),
-                          ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: hight * 0.02,
+                                  vertical: hight * 0.002),
+                              child: Text(
+                                "Welcome",
+                                style: TextStyle(
+                                    fontSize: hight * 0.03,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: hight * 0.02,
+                                  vertical: hight * 0.002),
+                              child: Text(
+                                "Harry!👋",
+                                style: TextStyle(
+                                    fontSize: hight * 0.04,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: hight * 0.02,
-                              vertical: hight * 0.002),
-                          child: Text(
-                            "Harry!👋",
-                            style: TextStyle(
-                                fontSize: hight * 0.04,
-                                fontWeight: FontWeight.bold),
+                          padding: EdgeInsets.all(hight * 0.03),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => chat_page()));
+                            },
+                            child: Container(
+                              width: width * 0.12,
+                              child: Image.asset("assets/chat.png"),
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    Padding(
-                        padding: EdgeInsets.all(hight * 0.03),
-                        child: Container(
-                            width: width * 0.15,
-                            child: Image.asset("assets/chat.png")))
-                  ],
+                  ),
                 ),
                 SizedBox(
                   height: hight * 0.03,
