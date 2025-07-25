@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:skill_swap/elements/bottom_taskbar.dart';
 import 'package:skill_swap/elements/home_sceen_tab.dart';
+import 'package:skill_swap/elements/search_bar.dart';
+import 'package:skill_swap/elements/tags.dart';
 import 'package:skill_swap/elements/top_skills_box.dart';
 import 'package:skill_swap/screens/chat_page.dart';
 import 'package:skill_swap/screens/login_page.dart';
@@ -48,7 +50,8 @@ class _home_pageState extends State<home_page> {
                                 "Welcome",
                                 style: TextStyle(
                                     fontSize: hight * 0.03,
-                                    fontWeight: FontWeight.w400),
+                                    fontFamily: "Manrope",
+                                    fontWeight: FontWeight.w700),
                               ),
                             ),
                             Padding(
@@ -83,8 +86,51 @@ class _home_pageState extends State<home_page> {
                     ),
                   ),
                 ),
+                // SizedBox(
+                //   height: hight * 0.03,
+                // ),
+                search_bar(),
                 SizedBox(
-                  height: hight * 0.03,
+                  height: hight * 0.01,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width * 0.05, vertical: hight * 0.0),
+                  child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Tags(
+                          tagList: ["Programming", "Cooking", "Music", "Art"])),
+                ),
+                SizedBox(
+                  height: hight * 0.01,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: hight * 0.02, vertical: hight * 0.02),
+                  child: Text(
+                    "Top Skill Swappers",
+                    style: TextStyle(
+                        fontFamily: "Manrope",
+                        fontSize: hight * 0.03,
+                        fontWeight: FontWeight.w800),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: hight * 0.02),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                          7,
+                          (index) => Padding(
+                                padding: EdgeInsets.all(hight * 0.015),
+                                child: top_skills_box(),
+                              )),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: hight * 0.04,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.05),
@@ -95,29 +141,6 @@ class _home_pageState extends State<home_page> {
                       horizontal: width * 0.05, vertical: hight * 0.04),
                   child: home_screen_tab(),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: hight * 0.02, vertical: hight * 0.02),
-                  child: Text(
-                    "Top Profile",
-                    style: TextStyle(
-                        fontSize: hight * 0.03, fontWeight: FontWeight.w600),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: hight * 0.02),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: List.generate(
-                          10,
-                          (index) => Padding(
-                                padding: EdgeInsets.all(hight * 0.015),
-                                child: top_skills_box(),
-                              )),
-                    ),
-                  ),
-                )
               ],
             ),
           ],
