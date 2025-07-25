@@ -48,6 +48,7 @@ class _home_screen_tabState extends State<home_screen_tab> {
                         Text(
                           "Raghav",
                           style: TextStyle(
+                              fontFamily: "Manrope",
                               fontSize: hight * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
@@ -59,6 +60,7 @@ class _home_screen_tabState extends State<home_screen_tab> {
                             Text(
                               "20\$",
                               style: TextStyle(
+                                  fontFamily: "Manrope",
                                   fontSize: hight * 0.02,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -68,6 +70,7 @@ class _home_screen_tabState extends State<home_screen_tab> {
                             Text(
                               "Java",
                               style: TextStyle(
+                                  fontFamily: "Manrope",
                                   fontSize: hight * 0.02,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -95,8 +98,9 @@ class _home_screen_tabState extends State<home_screen_tab> {
                                 child: Text(
                               "Book Now",
                               style: TextStyle(
+                                  fontFamily: "Manrope",
                                   fontSize: hight * 0.02,
-                                  fontWeight: FontWeight.w400),
+                                  fontWeight: FontWeight.w700),
                             )),
                           ),
                         )
