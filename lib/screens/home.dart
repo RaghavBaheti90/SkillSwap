@@ -129,13 +129,13 @@ class _home_pageState extends State<home_page> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: hight * 0.04,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.05),
-                  child: home_screen_tab(),
-                ),
+                // SizedBox(
+                //   height: hight * 0.04,
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+                //   child: home_screen_tab(),
+                // ),
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: width * 0.05, vertical: hight * 0.04),
