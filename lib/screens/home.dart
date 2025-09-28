@@ -5,7 +5,6 @@ import 'package:skill_swap/elements/search_bar.dart';
 import 'package:skill_swap/elements/tags.dart';
 import 'package:skill_swap/elements/top_skills_box.dart';
 import 'package:skill_swap/screens/chat_page.dart';
-import 'package:skill_swap/screens/login_page.dart';
 
 class home_page extends StatefulWidget {
   const home_page({super.key});

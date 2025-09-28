@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:skill_swap/screens/home.dart';
-import 'package:skill_swap/screens/openpage.dart';
 
 void main() {
   runApp(const MyApp());
